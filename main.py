@@ -1,4 +1,5 @@
 import discord, asyncio, pytz, datetime
+import os
 
 client = discord.Client()
 
@@ -96,5 +97,5 @@ async def on_ready(): # 봇이 실행되면 한 번 실행됨
     print("봇이 켜졌습니다!")
     await client.change_presence(status=discord.Status.online, activity=discord.Game("봇 테스트 중입니다."))
 
-                                              
-client.run("OTgwNzE1NTU4MzI2NjY1MjQ2.GdCLhG.LGyVfgoW4HnmddbuVCu1KVwTGNokdmMF8KwAAc")
+access_token = os.environ['BOT_TOKEN']                                    
+client.run(access_token)
